@@ -37,10 +37,6 @@ body {
   position: relative;
 }
 
-.card.card-mountain {
-  position: relative;
-}
-
 .card-new {
   position: absolute;
   transform: translate(-20%, -20%);
@@ -220,5 +216,17 @@ body {
   .pricing {
     flex-direction: column;
     gap: 8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pricing {
+    max-width: 1000px;
+    margin: 10rem 0;
+  }
+
+  .card-header {
+    width: 30rem;
+    height: 22.5rem;
   }
 }
