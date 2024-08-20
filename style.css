@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 1280px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1;
+  font-weight: 300;
+  color: #fff;
+  background-color: #cad3d3;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing {
+  max-width: 1170px;
+  margin: 18rem 0;
+  display: flex;
+  gap: 4.2rem;
+}
+@media only screen and (max-width: 1280px) {
+  .pricing {
+    flex-direction: column;
+    gap: 8rem;
+    margin: 10rem 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .pricing {
+    max-width: 1000px;
+    margin: 5rem 0;
+  }
+}
+
+.card {
+  position: relative;
+}
+.card__new {
+  position: absolute;
+  transform: translate(-20%, -20%);
+  z-index: 1;
+}
+.card__new-image {
+  position: relative;
+}
+.card__new-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card__price {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.card__price-number {
+  font-size: 2.6rem;
+  color: #2196f7;
+  text-align: center;
+}
+.card__price-number--mountain {
+  color: #d74498;
+}
+.card__price-number--forest {
+  color: #32ad1e;
+}
+.card__price-title {
+  font-size: 1.5rem;
+  color: #b4c0c9;
+}
+.card__price-mountain {
+  background-color: #2c2e3d;
+}
+.card__header {
+  width: 36.2rem;
+  height: 27.2rem;
+  background-position: left bottom;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 576px) {
+  .card__header {
+    width: 30rem;
+    height: 22.5rem;
+  }
+}
+.card__header-ocean {
+  background-image: url(images/ocean.png);
+}
+.card__header-mountain {
+  background-image: url(images/mountain.png);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.card__header-forest {
+  background-image: url(images/forest.png);
+}
+.card__header-secondary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.card__content {
+  color: #9faab2;
+  text-align: center;
+  padding: 2.5rem;
+  background-color: #fff;
+}
+.card__content-title {
+  font-size: 2.2rem;
+  color: #8a98a1;
+  margin-bottom: 3.2rem;
+}
+.card__content-description {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.card__info {
+  font-weight: 400;
+  color: #607380;
+  background-color: #fff;
+  list-style: none;
+}
+.card__info-item {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1.75rem 0;
+}
+.card__info-item:nth-child(odd) {
+  background-color: #f4f6f7;
+}
+.card__button {
+  background-color: #fff;
+  height: 15.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3.3rem;
+  border: 0;
+  cursor: pointer;
+}
+.btn--ocean {
+  border: 1px solid #3fa4f8;
+  color: #3fa4f8;
+  background-color: #fff;
+}
+.btn--mountain {
+  color: #fff;
+  background-color: #6c136f;
+}
+.btn--forest {
+  border: 1px solid #32ad1e;
+  color: #32ad1e;
+  background-color: #fff;
+}
