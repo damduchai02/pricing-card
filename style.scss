@@ -1,5 +1,43 @@
+:root {
+  --color-primary: #ffffff;
+  --color-background: #cad3d3;
+  --color-accent-blue: #2196f7;
+  --color-accent-pink: #d74498;
+  --color-accent-green: #32ad1e;
+  --color-text-light: #b4c0c9;
+  --color-dark: #2c2e3d;
+  --color-text-gray: #8a98a1;
+  --color-content-text: #9faab2;
+  --color-text-muted: #607380;
+  --color-background-light: #f4f6f7;
+  --color-border-blue: #3fa4f8;
+  --color-background-mountain: #6c136f;
+}
+
 $bp-largest: 1280px;
 $bg-smallest: 576px;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin style-button($border-color, $color, $bg-color) {
+  border: 1px solid var($border-color);
+  color: var($color);
+  background-color: var($bg-color);
+}
+
+@mixin transform($left, $right, $top, $bottom, $x, $y) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  transform: translate($x, $y);
+  z-index: 1;
+}
 
 *,
 *::before,
@@ -20,14 +58,12 @@ body {
   font-family: "Source Sans 3", sans-serif;
   line-height: 1;
   font-weight: 300;
-  color: #fff;
-  background-color: #cad3d3;
+  color: var(--color-primary);
+  background-color: var(--color-background);
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center;
 }
 
 .pricing {
@@ -52,19 +88,13 @@ body {
   position: relative;
 
   &__new {
-    position: absolute;
-    transform: translate(-20%, -20%);
-    z-index: 1;
-
+    @include transform(auto, auto, auto, auto, -20%, -20%);
     &-image {
       position: relative;
     }
 
     &-title {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      @include transform(50%, auto, 50%, auto, -50%, -50%);
       font-size: 1.3rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -72,41 +102,37 @@ body {
   }
 
   &__price {
-    position: absolute;
-    display: flex;
+    @include transform(50%, auto, auto, auto, -50%, -50%);
+    @include center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 2rem;
     width: 120px;
     height: 120px;
     border-radius: 100%;
-    background-color: #fff;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: var(--color-primary);
     z-index: 1;
 
     &-number {
       font-size: 2.6rem;
-      color: #2196f7;
+      color: var(--color-accent-blue);
       text-align: center;
 
       &--mountain {
-        color: #d74498;
+        color: var(--color-accent-pink);
       }
 
       &--forest {
-        color: #32ad1e;
+        color: var(--color-accent-green);
       }
     }
 
     &-title {
       font-size: 1.5rem;
-      color: #b4c0c9;
+      color: var(--color-text-light);
     }
 
     &-mountain {
-      background-color: #2c2e3d;
+      background-color: var(--color-dark);
     }
   }
 
@@ -115,10 +141,7 @@ body {
     height: 27.2rem;
     background-position: left bottom;
     opacity: 0.7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    @include center;
     @media only screen and (max-width: $bg-smallest) {
       width: 30rem;
       height: 22.5rem;
@@ -149,14 +172,14 @@ body {
   }
 
   &__content {
-    color: #9faab2;
+    color: var(--color-content-text);
     text-align: center;
     padding: 2.5rem;
-    background-color: #fff;
+    background-color: var(--color-primary);
 
     &-title {
       font-size: 2.2rem;
-      color: #8a98a1;
+      color: var(--color-text-gray);
       margin-bottom: 3.2rem;
     }
 
@@ -168,8 +191,8 @@ body {
 
   &__info {
     font-weight: 400;
-    color: #607380;
-    background-color: #fff;
+    color: var(--color-text-muted);
+    background-color: var(--color-primary);
     list-style: none;
 
     &-item {
@@ -178,17 +201,15 @@ body {
       padding: 1.75rem 0;
 
       &:nth-child(odd) {
-        background-color: #f4f6f7;
+        background-color: var(--color-background-light);
       }
     }
   }
 
   &__button {
-    background-color: #fff;
+    background-color: var(--color-primary);
     height: 15.1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
   }
 }
 
@@ -202,19 +223,26 @@ body {
   cursor: pointer;
 
   &--ocean {
-    border: 1px solid #3fa4f8;
-    color: #3fa4f8;
-    background-color: #fff;
+    @include style-button(
+      --color-border-blue,
+      --color-border-blue,
+      --color-primary
+    );
   }
 
   &--mountain {
-    color: #fff;
-    background-color: #6c136f;
+    @include style-button(
+      --color-background-mountain,
+      --color-primary,
+      --color-background-mountain
+    );
   }
 
   &--forest {
-    border: 1px solid #32ad1e;
-    color: #32ad1e;
-    background-color: #fff;
+    @include style-button(
+      --color-accent-green,
+      --color-accent-green,
+      --color-primary
+    );
   }
 }
