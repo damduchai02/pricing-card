@@ -1264,10 +1264,6 @@ body {
   flex-direction: column;
 }
 
-.my-10 {
-  margin: 10rem 0;
-}
-
 @media (max-width: 1280px) {
   .xl\:gap-8 {
     gap: 8rem;
@@ -1283,25 +1279,5 @@ body {
 @media (max-width: 1280px) {
   .xl\:my-10 {
     margin: 10rem 0;
-  }
-}
-
-.max-w-1000 {
-  max-width: 100rem;
-}
-
-.my-7 {
-  margin: 7rem 0;
-}
-
-@media (max-width: 576px) {
-  .xs\:max-w-1000 {
-    max-width: 100rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .xs\:my-7 {
-    margin: 7rem 0;
   }
 }

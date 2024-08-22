@@ -279,10 +279,6 @@ body {
   flex-direction: column;
 }
 
-.my-10 {
-  margin: 10rem 0;
-}
-
 .xl\:gap-8 {
   @include xl {
     gap: 8rem;
@@ -298,25 +294,5 @@ body {
 .xl\:my-10 {
   @include xl {
     margin: 10rem 0;
-  }
-}
-
-.max-w-1000 {
-  max-width: 100rem;
-}
-
-.my-7 {
-  margin: 7rem 0;
-}
-
-.xs\:max-w-1000 {
-  @include xs {
-    max-width: 100rem;
-  }
-}
-
-.xs\:my-7 {
-  @include xs {
-    margin: 7rem 0;
   }
 }
