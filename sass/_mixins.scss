@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin xl {
+  @media (max-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: $bp-xs) {
+    @content;
+  }
+}
