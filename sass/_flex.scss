@@ -1,0 +1,14 @@
+$justify-values: start, end, center;
+$align-values: start, end, center;
+
+@each $val in $justify-values {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
+}
+
+@each $val in $align-values {
+  .items-#{$val} {
+    align-items: $val;
+  }
+}

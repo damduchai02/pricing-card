@@ -1,0 +1,32 @@
+$bp-xs: 576px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
+
+// color
+$colors: (
+  "white": #ffffff,
+  "background": #cad3d3,
+  "primary-blue": #2196f7,
+  "secondary-blue": #7ac0fa,
+  "pink": #d74498,
+  "green": #32ad1e,
+  "purple": #6c136f,
+  "light": #b4c0c9,
+  "dark": #2c2e3d,
+  "gray": #8a98a1,
+  "content": #9faab2,
+  "muted": #607380,
+  "child": #f4f6f7,
+);
+
+$base-font-size: 1rem;
+
+$font-size: (
+  "sm": $base-font-size * 0.75,
+  "md": $base-font-size * 1.5,
+  "lg": $base-font-size * 2,
+  "xl": $base-font-size * 3,
+);

@@ -1,0 +1,56 @@
+@use "sass:math";
+
+$utilities: (
+  "max-width": (
+    "prefix": "max-w",
+    "values": (
+      "screen": 117rem,
+    ),
+  ),
+  "display": (
+    "prefix": "display",
+    "values": (
+      "n": none,
+      "b": block,
+      "f": flex,
+      "i": inline,
+      "i-b": inline-block,
+    ),
+  ),
+  "font-size": (
+    "prefix": "text",
+    "values": (
+      "sm": $base-font-size * 0.75,
+      "md": $base-font-size * 1.5,
+      "lg": $base-font-size * 2,
+      "xl": $base-font-size * 3,
+    ),
+  ),
+  "font-weight": (
+    "prefix": "font",
+    "values": (
+      "300": 300,
+      "400": 400,
+      "500": 500,
+      "600": 600,
+    ),
+  ),
+);
+
+// generate utility classes
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}

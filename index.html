@@ -3,9 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Pricing Card</title>
   </head>
   <body>
-    <h1>Pricing Card</h1>
+    <!-- Container -->
+    <div class="display-f justify-center items-center">
+      <!-- Pricing -->
+      <div class="pricing max-w-screen display-f bg-background">
+        <!-- Card Ocean -->
+        <div class="card card__ocean">
+          <div
+            class="card__price card__price-ocean display-f justify-center items-center bg-white"
+          >
+            <p class="card__price-number text-xl text-primary-blue">$399</p>
+            <p class="text-md text-light">Per tour</p>
+          </div>
+          <div
+            class="card__header card__header-ocean display-f justify-center items-center"
+          >
+            <h2 class="card__header-secondary text-xl font-300">ocean</h2>
+          </div>
+          <div class="card__content bg-white text-content">
+            <p class="card__content-title text-gray">Subtitle goes here</p>
+            <p class="text-md font-400">
+              Subtitle second line goes here lorem ipsum *
+            </p>
+          </div>
+          <ul class="card__info bg-white text-muted">
+            <li class="card__info-item text-md">Drop out ramen hustle</li>
+            <li class="card__info-item text-md">Coworking viral landing</li>
+            <li class="card__info-item text-md">Crush revenue traction</li>
+            <li class="card__info-item text-md">User base minimum viable</li>
+            <li class="card__info-item text-md">Lorem ipsum dolor</li>
+          </ul>
+          <div
+            class="card__button display-f justify-center items-center bg-white"
+          >
+            <button class="btn-outline-primary-blue">buy tour</button>
+          </div>
+        </div>
+        <!-- Card Mountains -->
+        <div class="card card__mountain">
+          <div class="card__new">
+            <div class="card__new-image">
+              <img src="../images/newmark.png" alt="image-new" />
+              <p class="card__new-title text-md font-600">new</p>
+            </div>
+          </div>
+          <div
+            class="card__price display-f justify-center items-center bg-dark"
+          >
+            <p class="card__price-number text-xl text-pink">$499</p>
+            <p class="text-md text-light">Per tour</p>
+          </div>
+          <div
+            class="card__header card__header-mountain display-f justify-center items-center"
+          >
+            <h2 class="card__header-secondary text-xl font-300">mountains</h2>
+            <p class="card__header-description">
+              The best price/quantity plan *
+            </p>
+          </div>
+          <div class="card__content bg-white text-content">
+            <p class="card__content-title text-gray">Subtitle goes here</p>
+            <p class="text-md font-400">
+              Subtitle second line goes here lorem ipsum *
+            </p>
+          </div>
+          <ul class="card__info bg-white text-muted">
+            <li class="card__info-item text-md">Drop out ramen hustle</li>
+            <li class="card__info-item text-md">Coworking viral landing</li>
+            <li class="card__info-item text-md">Crush revenue traction</li>
+            <li class="card__info-item text-md">User base minimum viable</li>
+            <li class="card__info-item text-md">Lorem ipsum dolor</li>
+          </ul>
+          <div
+            class="card__button display-f justify-center items-center bg-white"
+          >
+            <button class="btn">buy tour</button>
+          </div>
+        </div>
+        <!-- Card Forest -->
+        <div class="card card__forest">
+          <div
+            class="card__price card__price-forest display-f justify-center items-center bg-white"
+          >
+            <p class="card__price-number text-xl text-green">$599</p>
+            <p class="text-md text-light">Per tour</p>
+          </div>
+          <div
+            class="card__header card__header-forest display-f justify-center items-center"
+          >
+            <h2 class="card__header-secondary text-xl font-300">forest</h2>
+          </div>
+          <div class="card__content bg-white text-content">
+            <p class="card__content-title text-gray">Subtitle goes here</p>
+            <p class="text-md font-400">
+              Subtitle second line goes here lorem ipsum *
+            </p>
+          </div>
+          <ul class="card__info bg-white text-muted">
+            <li class="card__info-item text-md">Drop out ramen hustle</li>
+            <li class="card__info-item text-md">Coworking viral landing</li>
+            <li class="card__info-item text-md">Crush revenue traction</li>
+            <li class="card__info-item text-md">User base minimum viable</li>
+            <li class="card__info-item text-md">Lorem ipsum dolor</li>
+          </ul>
+          <div
+            class="card__button display-f justify-center items-center bg-white"
+          >
+            <button class="btn-outline-green">buy tour</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
