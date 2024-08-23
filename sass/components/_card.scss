@@ -1,0 +1,94 @@
+@mixin transform($left, $right, $top, $bottom, $x, $y) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  transform: translate($x, $y);
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+
+  &__new {
+    @include transform(auto, auto, auto, auto, -20%, -20%);
+
+    &-image {
+      position: relative;
+    }
+
+    &-title {
+      @include transform(50%, auto, 50%, auto, -50%, -50%);
+      text-transform: uppercase;
+    }
+  }
+
+  &__price {
+    flex-direction: column;
+    gap: 2rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 100%;
+    @include transform(50%, auto, auto, auto, -50%, -50%);
+
+    &-number {
+      text-align: center;
+    }
+  }
+
+  &__header {
+    width: 36.2rem;
+    height: 27.2rem;
+    background-position: left bottom;
+    opacity: 0.7;
+
+    &-ocean {
+      background-image: url(../images/ocean.png);
+    }
+
+    &-mountain {
+      background-image: url(../images/mountain.png);
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    &-forest {
+      background-image: url(../images/forest.png);
+    }
+
+    &-secondary {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding: 2.5rem;
+
+    &-title {
+      font-size: 2.2rem;
+      margin-bottom: map-get($map: $font-size, $key: "xl");
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    list-style: none;
+
+    &-item {
+      text-align: center;
+      padding: $base-font-size * 1.75 0;
+
+      &:nth-child(odd) {
+        background-color: map-get($map: $colors, $key: "child");
+      }
+    }
+  }
+
+  &__button {
+    height: 15rem;
+  }
+}

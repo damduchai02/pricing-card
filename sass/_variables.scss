@@ -5,16 +5,28 @@ $bp-lg: 1024px;
 $bp-xl: 1280px;
 $bp-2xl: 1536px;
 
-$color-primary: #ffffff;
-$color-background: #cad3d3;
-$color-blue: #2196f7;
-$color-pink: #d74498;
-$color-green: #32ad1e;
-$color-text-light: #b4c0c9;
-$color-dark: #2c2e3d;
-$color-text-gray: #8a98a1;
-$color-content-text: #9faab2;
-$color-text-muted: #607380;
-$color-light: #f4f6f7;
-$color-border-blue: #3fa4f8;
-$color-mountain: #6c136f;
+// color
+$colors: (
+  "white": #ffffff,
+  "background": #cad3d3,
+  "primary-blue": #2196f7,
+  "secondary-blue": #7ac0fa,
+  "pink": #d74498,
+  "green": #32ad1e,
+  "purple": #6c136f,
+  "light": #b4c0c9,
+  "dark": #2c2e3d,
+  "gray": #8a98a1,
+  "content": #9faab2,
+  "muted": #607380,
+  "child": #f4f6f7,
+);
+
+$base-font-size: 1rem;
+
+$font-size: (
+  "sm": $base-font-size * 0.75,
+  "md": $base-font-size * 1.5,
+  "lg": $base-font-size * 2,
+  "xl": $base-font-size * 3,
+);
