@@ -3,9 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+    <title>Todo App</title>
   </head>
   <body>
-    <h1>Pricing Card</h1>
+    <header class="header">Todo App</header>
+    <main>
+      <!-- Form -->
+      <section class="section">
+        <form class="form">
+          <div class="form__control">
+            <label for="task" class="form__label">Task</label>
+            <input
+              type="text"
+              id="task"
+              name="task"
+              value="go to company"
+              placeholder="Enter task"
+              class="form__input form__task"
+            />
+          </div>
+          <div class="form__control">
+            <label for="client" class="form__label">Client</label>
+            <input
+              type="text"
+              id="client"
+              name="client"
+              value="hai"
+              placeholder="Enter client"
+              class="form__input form__client"
+            />
+          </div>
+          <div class="form__control">
+            <label for="priority" class="form__label">Priority</label>
+            <select
+              id="priority"
+              name="priority"
+              class="form__select form__priority"
+            >
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div class="form__control">
+            <label for="effort" class="form__label">Level of Effort</label>
+            <select id="effort" name="effort" class="form__select form__effort">
+              <option value="easy">Easy</option>
+              <option value="moderate">Moderate</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div class="form__control">
+            <label for="date" class="form__label">Date</label>
+            <select id="date" name="date" class="form__select form__date">
+              <option value="mon">Mon</option>
+              <option value="tue">Tue</option>
+              <option value="wed">Wed</option>
+              <option value="thu">Thu</option>
+              <option value="fri">Fri</option>
+              <option value="sat">Sat</option>
+              <option value="sun">Sun</option>
+            </select>
+          </div>
+          <div class="form__control">
+            <button class="form__button">Create Task</button>
+          </div>
+        </form>
+      </section>
+
+      <hr />
+      <!-- Filter -->
+      <section class="section">
+        <input type="text" class="filter__input" placeholder="Filter Tasks" />
+      </section>
+
+      <!-- Sort -->
+      <section class="section">
+        <div class="task__button">
+          <button class="btn btn-default">Default</button>
+          <button class="btn btn-az">Sort by name (A-Z)</button>
+          <button class="btn btn-za">Sort by name (Z-A)</button>
+        </div>
+      </section>
+
+      <hr />
+      <!-- Task List -->
+      <section class="section">
+        <div class="task">
+          <ul class="task__list"></ul>
+        </div>
+        <div class="task__button task__button-delete">
+          <button class="btn btn-delete-selected">Delete Selected Task</button>
+          <button class="btn btn-clear">Clear Task</button>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- Todo List -->
+      <section class="section">
+        <div class="todo">
+          <div id="left" class="todo__list">
+            <h2 class="todo__title">To-Do</h2>
+          </div>
+          <div id="right" class="todo__done">
+            <h2 class="todo__title">Done</h2>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
