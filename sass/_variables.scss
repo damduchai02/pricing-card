@@ -1,0 +1,21 @@
+$colors: (
+  "white": #fff,
+  "gray": #d9d9d9,
+  "red": #e42c5f,
+  "yellow": #ecb800,
+  "blue": #2d41a7,
+  "violet": #d5ccff,
+  "background": #6655bd,
+  "slate": #f4f2ff,
+  "transparent": transparent,
+);
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-2xl: $base-font-size * 3;
