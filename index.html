@@ -10,60 +10,71 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/script.js"></script>
-    <title>Todo App</title>
+    <script type="module" src="js/script.js"></script>
+    <title>Todo List</title>
   </head>
   <body>
-    <header class="header">Todo App</header>
+    <h1 class="text-2xl text-center p-1 text-white">Todo App</h1>
     <main>
       <!-- Form -->
-      <section class="section">
-        <form class="form">
-          <div class="form__control">
-            <label for="task" class="form__label">Task</label>
+      <div class="container">
+        <form
+          id="form"
+          class="display-g grid-cols-3 p-3 gap-2 justify-center items-end"
+        >
+          <div class="display-f flex-column gap-1">
+            <label for="task" class="text-xl text-white">Task</label>
             <input
               type="text"
               id="task"
               name="task"
-              value="go to company"
-              placeholder="Enter task"
-              class="form__input form__task"
+              value="B"
+              class="border-0 p-1 rounded-4 outline-none"
             />
           </div>
-          <div class="form__control">
-            <label for="client" class="form__label">Client</label>
+          <div class="display-f flex-column gap-1">
+            <label for="client" class="text-xl text-white">Client</label>
             <input
               type="text"
               id="client"
               name="client"
-              value="hai"
-              placeholder="Enter client"
-              class="form__input form__client"
+              value="walmart"
+              class="border-0 p-1 rounded-4 outline-none"
             />
           </div>
-          <div class="form__control">
-            <label for="priority" class="form__label">Priority</label>
+          <div class="display-f flex-column gap-1">
+            <label for="priority" class="text-xl text-white">Priority</label>
             <select
               id="priority"
               name="priority"
-              class="form__select form__priority"
+              class="border-0 p-1 rounded-4 outline-none"
             >
               <option value="high">High</option>
               <option value="medium">Medium</option>
               <option value="low">Low</option>
             </select>
           </div>
-          <div class="form__control">
-            <label for="effort" class="form__label">Level of Effort</label>
-            <select id="effort" name="effort" class="form__select form__effort">
+          <div class="display-f flex-column gap-1">
+            <label for="effort" class="text-xl text-white"
+              >Level of Effort</label
+            >
+            <select
+              id="effort"
+              name="effort"
+              class="border-0 p-1 rounded-4 outline-none"
+            >
               <option value="easy">Easy</option>
               <option value="moderate">Moderate</option>
               <option value="hard">Hard</option>
             </select>
           </div>
-          <div class="form__control">
-            <label for="date" class="form__label">Date</label>
-            <select id="date" name="date" class="form__select form__date">
+          <div class="display-f flex-column gap-1">
+            <label for="date" class="text-xl text-white">Date</label>
+            <select
+              id="date"
+              name="date"
+              class="border-0 p-1 rounded-4 outline-none"
+            >
               <option value="mon">Mon</option>
               <option value="tue">Tue</option>
               <option value="wed">Wed</option>
@@ -73,52 +84,173 @@
               <option value="sun">Sun</option>
             </select>
           </div>
-          <div class="form__control">
-            <button class="form__button">Create Task</button>
-          </div>
+          <button
+            id="btn-form"
+            class="display-b border-0 p-1 rounded-4 cursor-pointer"
+          >
+            Create Task
+          </button>
         </form>
-      </section>
 
-      <hr />
-      <!-- Filter -->
-      <section class="section">
-        <input type="text" class="filter__input" placeholder="Filter Tasks" />
-      </section>
+        <hr />
+        <!-- Filter -->
+        <section class="p-3">
+          <label for="filter" class="mb-2 display-b text-white text-xl"
+            >Filter</label
+          >
+          <input
+            type="text"
+            id="filter"
+            name="filter"
+            class="border-0 p-2 rounded-4 outline-none w-full text-lg"
+          />
+        </section>
 
-      <!-- Sort -->
-      <section class="section">
-        <div class="task__button">
-          <button class="btn btn-default">Default</button>
-          <button class="btn btn-az">Sort by name (A-Z)</button>
-          <button class="btn btn-za">Sort by name (Z-A)</button>
-        </div>
-      </section>
-
-      <hr />
-      <!-- Task List -->
-      <section class="section">
-        <div class="task">
-          <ul class="task__list"></ul>
-        </div>
-        <div class="task__button task__button-delete">
-          <button class="btn btn-delete-selected">Delete Selected Task</button>
-          <button class="btn btn-clear">Clear Task</button>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- Todo List -->
-      <section class="section">
-        <div class="todo">
-          <div id="left" class="todo__list">
-            <h2 class="todo__title">To-Do</h2>
+        <hr />
+        <!-- Sort -->
+        <section class="p-3">
+          <title class="mb-2 display-b text-white text-xl">Sort</title>
+          <div class="display-f gap-2">
+            <button
+              id="sort-az"
+              class="display-b border-0 p-1 rounded-4 cursor-pointer"
+            >
+              Sort by name (A-Z)
+            </button>
+            <button
+              id="sort-za"
+              class="display-b border-0 p-1 rounded-4 cursor-pointer"
+            >
+              Sort by name (Z-A)
+            </button>
           </div>
-          <div id="right" class="todo__done">
-            <h2 class="todo__title">Done</h2>
-          </div>
+        </section>
+
+        <hr />
+
+        <!-- Task List -->
+        <section class="p-3">
+          <title class="mb-2 display-b text-white text-xl">Task List</title>
+          <ul id="task-list" class="display-f gap-1 flex-column">
+            <li
+              key="1"
+              priority-effort="high-easy"
+              class="display-f p-2 bg-violet items-center justify-space-around rounded-2"
+            >
+              <div class="display-f gap-4 items-center">
+                <h3 class="text-lg text-capitalize">A</h3>
+                <div class="date-red text-capitalize">mon</div>
+                <div class="display-f gap-1">
+                  <div class="effort-red"></div>
+                  <div class="effort-gray"></div>
+                  <div class="effort-gray"></div>
+                </div>
+                <p class="text-lg text-capitalize">walmart</p>
+              </div>
+              <div class="display-f gap-1">
+                <button id="edit">Edit</button>
+                <button id="duplicate">Duplicate</button>
+                <button id="delete">Delete</button>
+              </div>
+              <input id="checkbox" type="checkbox" />
+            </li>
+            <li
+              key="2"
+              priority-effort="high-easy"
+              class="display-f p-2 bg-violet items-center justify-space-around rounded-2"
+            >
+              <div class="display-f gap-4 items-center">
+                <h3 class="text-lg text-capitalize">C</h3>
+                <div class="date-red text-capitalize">mon</div>
+                <div class="display-f gap-1">
+                  <div class="effort-red"></div>
+                  <div class="effort-gray"></div>
+                  <div class="effort-gray"></div>
+                </div>
+                <p class="text-lg text-capitalize">walmart</p>
+              </div>
+              <div class="display-f gap-1">
+                <button id="edit">Edit</button>
+                <button id="duplicate">Duplicate</button>
+                <button id="delete">Delete</button>
+              </div>
+              <input id="checkbox" type="checkbox" />
+            </li>
+          </ul>
+        </section>
+
+        <hr />
+
+        <div class="p-3 display-f gap-2">
+          <button
+            id="delete-selected"
+            class="display-b border-0 p-1 rounded-4 cursor-pointer"
+          >
+            Delete Selected Task
+          </button>
+          <button
+            id="clear"
+            class="display-b border-0 p-1 rounded-4 cursor-pointer"
+          >
+            Clear Task
+          </button>
         </div>
-      </section>
+
+        <hr />
+
+        <!-- Todo List -->
+        <section class="p-3">
+          <div class="display-f gap-2 justify-space-around">
+            <!-- Todo -->
+            <div
+              id="left"
+              class="display-f flex-column gap-2 bg-violet p-2 rounded-8"
+            >
+              <title class="mb-2 display-b text-xl">To-Do</title>
+              <div
+                key="1"
+                class="todo-item display-f flex-column gap-2 bg-slate p-2 rounded-8"
+                draggable="true"
+              >
+                <h3 class="text-lg">A</h3>
+                <div class="display-f gap-4 items-center">
+                  <div class="date-red">Mon</div>
+                  <div class="display-f gap-1">
+                    <div class="effort-red"></div>
+                    <div class="effort-gray"></div>
+                    <div class="effort-gray"></div>
+                  </div>
+                  <p class="text-lg text-capitalize text-blue">walmart</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Done -->
+            <div
+              id="right"
+              class="display-f flex-column gap-2 bg-violet p-2 rounded-8"
+            >
+              <title class="mb-2 display-b text-xl">Done</title>
+              <div
+                key="2"
+                class="todo-item display-f flex-column gap-2 bg-slate p-2 rounded-8"
+                draggable="true"
+              >
+                <h3 class="text-lg text-capitalize">C</h3>
+                <div class="display-f gap-4 items-center">
+                  <div class="date-red">Mon</div>
+                  <div class="display-f gap-1">
+                    <div class="effort-red"></div>
+                    <div class="effort-gray"></div>
+                    <div class="effort-gray"></div>
+                  </div>
+                  <p class="text-lg text-capitalize text-blue">walmart</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   </body>
 </html>

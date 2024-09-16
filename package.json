@@ -2,13 +2,13 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "compile": "sass --watch --no-source-map sass/index.scss css/style.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.77.8"
+    "sass": "^1.78.0"
   }
 }

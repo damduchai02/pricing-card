@@ -11,9 +11,28 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   line-height: 1;
   font-weight: 300;
   background-color: #2b1887;
   padding: 7.2rem 4.8rem;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+#left,
+#right {
+  min-width: 36rem;
+}
+
+.edit {
+  opacity: 0.2;
 }

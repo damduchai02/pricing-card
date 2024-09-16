@@ -1,0 +1,13 @@
+$grid-cols-values: 1, 2, 3, 4;
+$gaps: 1, 2, 3, 4;
+
+@each $val in $grid-cols-values {
+  .grid-cols-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+@each $val in $gaps {
+  .gap-#{$val} {
+    gap: $base-font-size * $val;
+  }
+}
