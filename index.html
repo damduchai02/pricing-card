@@ -3,9 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing Card</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script type="module" defer src="js/script.js"></script>
+
+    <title>Kards Board</title>
   </head>
   <body>
-    <h1>Pricing Card</h1>
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <h1 class="heading-primary">Kards Board</h1>
+      </div>
+    </header>
+
+    <div id="card-context-menu" class="context-menu">
+      <!-- Right-click context menu on cards. -->
+      <ul>
+        <li id="card-context-menu-delete">Delete</li>
+        <li id="card-context-menu-clear">Clear</li>
+        <li id="card-context-menu-duplicate">Duplicate</li>
+      </ul>
+    </div>
+
+    <!-- Container -->
+    <div class="container" id="container-main">
+      <div id="cards-container">
+        <!-- Card 1 -->
+        <!-- <div id="e1" class="parent-card">
+          <span>
+            <h2 id="e1-h2" class="card-title">Todo</h2>
+            <i aria-hidden="true" class="fa fa-bars"></i>
+          </span>
+          <ul id="e1-ul">
+            <li id="e2">
+              <p class="item-title">Buy a Pizza</p>
+              <span>
+                <i aria-hidden="true" class="fa fa-pencil"></i>
+                <i aria-hidden="true" class="fa fa-trash"></i>
+              </span>
+            </li>
+            <li id="e3">
+              <p class="item-title">Buy a Pizza</p>
+              <span>
+                <i aria-hidden="true" class="fa fa-copy"></i>
+                <i aria-hidden="true" class="fa fa-pencil"></i>
+                <i aria-hidden="true" class="fa fa-trash"></i>
+              </span>
+            </li>
+          </ul>
+          <input
+            id="e1-input"
+            type="text"
+            name="add-todo-text"
+            placeholder="Add Task..."
+          />
+          <button id="e1-button" class="plus-button">+</button>
+        </div> -->
+
+        <!-- Add card -->
+        <div id="add-card">
+          <input
+            type="text"
+            id="add-card-text"
+            name="add-card"
+            placeholder="Add Card..."
+            autofocus
+          />
+          <button id="add-card-button" class="plus-button">+</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
