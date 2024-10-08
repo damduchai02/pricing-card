@@ -3,9 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing Card</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" defer src="js/main.js"></script>
+
+    <title>Kards Board</title>
   </head>
   <body>
-    <h1>Pricing Card</h1>
+    <!-- Header -->
+    <header>
+      <h1 class="heading">Kards Board</h1>
+    </header>
+
+    <!-- Container -->
+    <div class="container" id="board">
+      <!-- Cards Container -->
+      <div class="cards-container" id="cards-container">
+        <!-- Card Todo Column -->
+        <div class="card-column" id="1">
+          <!-- Todo Header -->
+          <span>
+            <h2 class="card-title">Todo</h2>
+          </span>
+          <!-- Todo Content -->
+          <div class="card-content">
+            <ul class="card-item-list">
+              <li class="card-item">
+                <span class="item-title">Buy a Pizza</span>
+                <span class="icon-list">
+                  <i aria-hidden="true" class="fa fa-copy"></i>
+                  <i aria-hidden="true" class="fa fa-pencil"></i>
+                  <i aria-hidden="true" class="fa fa-trash"></i>
+                </span>
+              </li>
+              <li class="card-item">
+                <span class="item-title">Buy a Coffee</span>
+                <span class="icon-list">
+                  <i aria-hidden="true" class="fa fa-copy"></i>
+                  <i aria-hidden="true" class="fa fa-pencil"></i>
+                  <i aria-hidden="true" class="fa fa-trash"></i>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- Add Item -->
+          <div class="add-item-container">
+            <input type="text" name="add-item" placeholder="Add Item..." />
+            <button class="plus-button">+</button>
+          </div>
+        </div>
+
+        <!-- Card Doing Column -->
+        <div class="card-column" id="2">
+          <!-- Doing Header -->
+          <span>
+            <h2 class="card-title">Doing</h2>
+          </span>
+          <!--  Doing Content -->
+          <div class="card-content">
+            <ul class="card-item-list">
+              <li class="card-item">
+                <span class="item-title">Buy a Pizza</span>
+                <span>
+                  <i aria-hidden="true" class="fa fa-copy"></i>
+                  <i aria-hidden="true" class="fa fa-pencil"></i>
+                  <i aria-hidden="true" class="fa fa-trash"></i>
+                </span>
+              </li>
+              <li class="card-item">
+                <span class="item-title">Buy a Coffee</span>
+                <span class="icon-list">
+                  <i aria-hidden="true" class="fa fa-copy"></i>
+                  <i aria-hidden="true" class="fa fa-pencil"></i>
+                  <i aria-hidden="true" class="fa fa-trash"></i>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- Add Item -->
+          <div class="add-item-container">
+            <input type="text" name="add-item" placeholder="Add Item..." />
+            <button class="plus-button">+</button>
+          </div>
+        </div>
+        <!-- Add Card -->
+        <div class="add-card-container" id="add-card-container">
+          <input
+            type="text"
+            id="add-card-input"
+            name="add-card"
+            placeholder="Add Card..."
+          />
+          <button class="plus-button" id="add-card-button">+</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
