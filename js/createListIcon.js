@@ -19,9 +19,7 @@ export function createListIcon(
 
     selectedCardArray.items.push(itemText);
 
-    await updateItem(selectedCardArray);
-
-    updateDOM();
+    await updateItem(selectedCardArray, updateDOM);
   });
 
   const editIcon = createIcon('fa fa-pencil');
@@ -34,9 +32,7 @@ export function createListIcon(
 
       selectedCardArray.items.splice(index, 1, textEdit);
 
-      await updateItem(selectedCardArray);
-
-      updateDOM();
+      await updateItem(selectedCardArray, updateDOM);
     };
 
     input.addEventListener('blur', save, true);
@@ -45,11 +41,10 @@ export function createListIcon(
   const deleteIcon = createIcon('fa fa-trash');
   deleteIcon.addEventListener('click', async function (e) {
     const selectedCardArray = findCardArray(e, listCardArrays);
+
     selectedCardArray.items.splice(index, 1);
 
-    await updateItem(selectedCardArray);
-
-    updateDOM();
+    await updateItem(selectedCardArray, updateDOM);
   });
 
   span.appendChild(duplicateIcon);

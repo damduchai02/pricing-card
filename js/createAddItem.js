@@ -21,11 +21,10 @@ export function createAddItem(listCardArrays, updateDOM) {
       const selectedCardArray = listCardArrays.find(
         (card) => card.id === cardColumn.id
       );
+
       selectedCardArray.items.push(itemText);
 
-      await updateItem(selectedCardArray);
-
-      updateDOM();
+      await updateItem(selectedCardArray, updateDOM);
     }
   });
 

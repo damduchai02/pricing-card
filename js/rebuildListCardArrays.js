@@ -1,19 +1,21 @@
-// Allows arrays to reflect Drag and Drop Items
+import { updateItem } from './utils.js';
 
-export function rebuildListCardArrays(
+// Allows arrays to reflect Drag and Drop Items
+export async function rebuildListCardArrays(
   dragColumn,
   dropColumn,
   listCardArrays,
   updateDOM
 ) {
-  resetCardArray(dragColumn, listCardArrays);
-  resetCardArray(dropColumn, listCardArrays);
-  updateDOM();
+  await resetCardArray(dragColumn, listCardArrays, updateDOM);
+  await resetCardArray(dropColumn, listCardArrays, updateDOM);
 }
 
-function resetCardArray(column, listCardArrays) {
+async function resetCardArray(column, listCardArrays, updateDOM) {
   const itemsList = column.querySelectorAll('.card-item');
   const itemsListArray = Array.from(itemsList).map((item) => item.textContent);
-  const cardArray = listCardArrays.find((card) => card.id === +column.id);
+  const cardArray = listCardArrays.find((card) => card.id === column.id);
   cardArray.items = itemsListArray;
+
+  await updateItem(cardArray, updateDOM);
 }

@@ -8,7 +8,5 @@ export async function addCardColumn(listCardArrays, updateDOM) {
   const cardId = listCardArrays[listCardArrays.length - 1]?.id + 1 || 1;
   const cardArray = { id: cardId, name: cardText, items: [] };
 
-  await createCardColumn(cardArray);
-
-  updateDOM();
+  await createCardColumn(cardArray, updateDOM);
 }

@@ -1,4 +1,5 @@
 import { replaceText } from './replaceText.js';
+import { updateItem } from './utils.js';
 
 export function createCardTitle(title, listCardArrays, updateDOM) {
   const span = document.createElement('span');
@@ -19,22 +20,7 @@ export function createCardTitle(title, listCardArrays, updateDOM) {
 
       selectedCardArray.name = textEdit;
 
-      const updateCardTitle = async function () {
-        await fetch(
-          `https://67049867ab8a8f8927343368.mockapi.io/api/todos/${selectedCardArray.id}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(selectedCardArray),
-          }
-        );
-      };
-
-      await updateCardTitle();
-
-      updateDOM();
+      await updateItem(selectedCardArray, updateDOM);
     };
 
     input.addEventListener('blur', save, true);

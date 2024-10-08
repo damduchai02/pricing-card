@@ -1,15 +1,15 @@
 import { createCardColumn } from './createCardColumn.js';
 import { addCardColumn } from './addCardColumn.js';
-import { getTodosFormServer } from './getTodosFromServer.js';
+import { getTodosFromServer } from './getTodosFromServer.js';
 
 // DOM element
 const addCardButton = document.getElementById('add-card-button');
 
-let listCardArrays = await getTodosFormServer();
+let listCardArrays = await getTodosFromServer();
 
 // Update Columns in DOM - Reset HTML, Update localStorage
 async function updateDOM() {
-  let listCardArrays = await getTodosFormServer();
+  let listCardArrays = await getTodosFromServer();
 
   // Remove Card Columns
   const listCardColumns = document.querySelectorAll('.card-column');
