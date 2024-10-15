@@ -7,6 +7,8 @@ const addCardButton = document.getElementById('add-card-button');
 
 let listCardArrays = await getTodosFromServer();
 
+const user = JSON.parse(localStorage.getItem('user')) || null;
+
 // Update Columns in DOM - Reset HTML, Update localStorage
 async function updateDOM() {
   let listCardArrays = await getTodosFromServer();
@@ -27,4 +29,8 @@ addCardButton.addEventListener('click', function () {
 });
 
 // Render UI
-updateDOM();
+if (user) {
+  updateDOM();
+} else {
+  window.location.href = 'login.html';
+}
