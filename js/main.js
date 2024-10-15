@@ -11,16 +11,20 @@ const user = JSON.parse(localStorage.getItem('user')) || null;
 
 // Update Columns in DOM - Reset HTML, Update localStorage
 async function updateDOM() {
-  let listCardArrays = await getTodosFromServer();
+  if (user) {
+    // let listCardArrays = await getTodosFromServer();
 
-  // Remove Card Columns
-  const listCardColumns = document.querySelectorAll('.card-column');
-  listCardColumns.forEach((item) => item.remove());
+    // Remove Card Columns
+    const listCardColumns = document.querySelectorAll('.card-column');
+    listCardColumns.forEach((item) => item.remove());
 
-  // Render Card Columns
-  listCardArrays.forEach((card) => {
-    createCardColumn(card, listCardArrays, updateDOM);
-  });
+    // Render Card Columns
+    listCardArrays.forEach((card) => {
+      createCardColumn(card, listCardArrays, updateDOM);
+    });
+  } else {
+    window.location.href = 'login.html';
+  }
 }
 
 // Add Card Column
@@ -29,10 +33,5 @@ addCardButton.addEventListener('click', function () {
 });
 
 // Render UI
-if (user) {
-  updateDOM();
-} else {
-  window.location.href = 'login.html';
-}
 
-////////////////////////////////
+updateDOM();
