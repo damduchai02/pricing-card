@@ -7,10 +7,6 @@ form.addEventListener('submit', async function (e) {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  if (!email || !password) {
-    alert('Please enter email or password');
-  }
-
   const user = { email, password };
 
   try {
@@ -27,7 +23,7 @@ form.addEventListener('submit', async function (e) {
       localStorage.setItem('user', JSON.stringify(data));
       window.location.href = 'index.html';
     } else {
-      alert('Email or password is not correct.');
+      alert(data.error);
     }
   } catch (error) {}
 });

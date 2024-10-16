@@ -1,15 +1,27 @@
+import { checkEmail } from './checkEmail.js';
+import { checkPassword } from './checkPassword.js';
+import { validateInput } from './validateInput.js';
+
 const form = document.getElementById('form');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
+
+emailInput.addEventListener('input', function (e) {
+  validateInput(e, checkEmail, 'Please provide a valid email address');
+});
+
+passwordInput.addEventListener('input', function (e) {
+  validateInput(
+    e,
+    checkPassword,
+    'Password should be at least 8 characters, including uppercase, lowercase, numbers and special characters'
+  );
+});
 
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
-
-  if (!email || !password) {
-    alert('Please enter email or password');
-  }
 
   const newUser = { email, password };
 
@@ -23,8 +35,10 @@ form.addEventListener('submit', async function (e) {
     });
     const data = await response.json();
 
-    if (data) {
+    if (data.id) {
       window.location.href = 'login.html';
+    } else {
+      alert(data.error);
     }
   } catch (error) {}
 });

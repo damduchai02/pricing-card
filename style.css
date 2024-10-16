@@ -214,6 +214,11 @@ body .login,
   border-radius: 0.8rem;
 }
 
+.text-error {
+  color: red;
+  font-size: 1.2rem;
+}
+
 .form-btn {
   display: block;
   padding: 1.6rem;

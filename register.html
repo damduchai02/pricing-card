@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <script type="module" defer src="js/register.js"></script>
+
     <title>Kards Board</title>
   </head>
   <body>
@@ -26,8 +28,8 @@
             type="text"
             id="email"
             name="email"
-            value="eve.holt@reqres.in"
             class="form-input"
+            required
           />
         </div>
         <div class="form-input-container">
@@ -36,15 +38,13 @@
             type="password"
             id="password"
             name="password"
-            value="pistol"
             class="form-input"
+            required
           />
         </div>
         <button type="submit" id="btn-login" class="form-btn">Register</button>
         <p class="">Already a member? <a href="login.html">Login</a></p>
       </form>
     </section>
-
-    <script src="js/register.js"></script>
   </body>
 </html>
