@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" defer src="js/register.js"></script>
+
+    <title>Kards Board</title>
+  </head>
+  <body>
+    <section class="register">
+      <form id="form" class="form">
+        <h4 class="form-heading">Register</h4>
+        <div class="form-input-container">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="form-input"
+            required
+          />
+        </div>
+        <div class="form-input-container">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-input"
+            required
+          />
+        </div>
+        <button type="submit" id="btn-login" class="form-btn">Register</button>
+        <p class="">Already a member? <a href="login.html">Login</a></p>
+      </form>
+    </section>
+  </body>
+</html>

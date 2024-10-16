@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pricing Card</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" defer src="js/main.js"></script>
+
+    <title>Kards Board</title>
   </head>
   <body>
-    <h1>Pricing Card</h1>
+    <!-- Header -->
+    <header>
+      <h1 class="heading">Kards Board</h1>
+    </header>
+
+    <!-- Container -->
+    <div class="container" id="board">
+      <!-- Cards Container -->
+      <div class="cards-container" id="cards-container">
+        <!-- Add Card -->
+        <div class="add-card-container" id="add-card-container">
+          <input
+            type="text"
+            id="add-card-input"
+            name="add-card"
+            placeholder="Add Card..."
+          />
+          <button class="plus-button" id="add-card-button">+</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
